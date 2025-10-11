@@ -1,6 +1,6 @@
 ---
 title : "Access S3 from on-premises"
-date : "`r Sys.Date()`"
+date: "2025-09-09"
 weight : 4
 chapter : false
 pre : " <b> 5.4. </b> "

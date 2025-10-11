@@ -1,6 +1,6 @@
 ---
 title : "Tạo một Gateway Endpoint"
-date :  "`r Sys.Date()`" 
+date: "2025-09-09" 
 weight : 1
 chapter : false
 pre : " <b> 5.3.1 </b> "

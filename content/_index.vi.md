@@ -1,15 +1,15 @@
 ---
 title: "Báo cáo thực tập"
-date: "`r Sys.Date()`"
+date: "2025-09-09"
 weight: 1
 chapter: false
 ---
 
 # Báo cáo thực tập
 ### Thông tin sinh viên:
-&emsp; **Họ và tên:** Nguyễn Văn A
+&emsp; **Họ và tên:** Nguyễn Minh Đức
 
-&emsp; **Số điện thoại:** 0989888999
+&emsp; **Số điện thoại:** 0768803969
 
 &emsp; **Email:** Anguyenvan@gmail.com
 

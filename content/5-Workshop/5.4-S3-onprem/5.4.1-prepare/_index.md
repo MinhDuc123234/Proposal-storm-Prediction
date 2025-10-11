@@ -1,6 +1,6 @@
 ---
 title : "Prepare the environment"
-date : "`r Sys.Date()`"
+date: "2025-09-09"
 weight : 1
 chapter : false
 pre : " <b> 5.4.1 </b> "

@@ -1,57 +1,45 @@
 ---
 title: "Week 2 Worklog"
-date: "`r Sys.Date()`"
+date: "2025-09-09"
 weight: 1
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
+
 
 
 ### Week 2 Objectives:
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Advance the storm modeling project by refining data structures and analysis approach.
+* Strengthen AWS Cloud knowledge through hands-on practice with core services.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 1   | - Ongoing Progress in Storm Analysis and Trajectory Modeling Project <br>&emsp; +Storm Data Analysis <br>&emsp; + Trajectory Modeling & Classification <br>&emsp; + Predictive Modeling Development                                                                                                   | 15/09/2025 | 21/09/2025      |
+| 2   | - Collaboration with the Software Engineering team on integrating the model and the software                                              | 16/09/2025 | 18/09/2025      |  |
+| 3   | - Continue exploring AWS cloud services: <br>&emsp; + Amazon S3 – learned how to set up buckets and manage data storage. <br>&emsp; + Amazon EC2 – learned how to launch instances, configure security groups, and connect via SSH.  | 17/09/2025 | 19/09/2025      | <https://cloudjourney.awsstudygroup.com/> |
+
 
 
 ### Week 2 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Gained deeper understanding of AWS fundamentals
 
-* Successfully created and configured an AWS Free Tier account.
+* SWorked with Amazon S3 and EC2 services:
+  * Created and managed S3 buckets for storm data
+  * Launched EC2 instances and configured security groups
+  * Generated and used key pairs for secure accessView EC2 service
+  * Connected via SSH and set up the working environment
+  * Linked S3 with EC2 for data workflow integration
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Progress on Storm Modeling Project
+  * Explored different modeling approaches and how they can be applied to the project data
+  * Reviewed academic research to identify formulas and methods relevant
+  * Defined key metrics (speed, heading, distance, lifetime) and clarified how they will be derived from raw data.
 
-* Used AWS CLI to perform basic operations such as:
+* Coordinated with the Software Engineering team:
+  * Defined integration points between model and software
+  * Clarified responsibilities of each side
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
