@@ -15,21 +15,21 @@
     <title>Bản đề xuất :: Báo cáo thực tập</title>
 
     
-    <link href="../../css/nucleus.css?1760235269" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1760235269" rel="stylesheet">
-    <link href="../../css/hybrid.css?1760235269" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1760235269" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1760235269" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1760235269" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1760235269" rel="stylesheet">
-    <link href="../../css/theme.css?1760235269" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1760235269" rel="stylesheet">
+    <link href="../../css/nucleus.css?1760245355" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1760245355" rel="stylesheet">
+    <link href="../../css/hybrid.css?1760245355" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1760245355" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1760245355" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1760245355" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1760245355" rel="stylesheet">
+    <link href="../../css/theme.css?1760245355" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1760245355" rel="stylesheet">
     
-    <link href="../../css/theme-workshop.css?1760235269" rel="stylesheet">
+    <link href="../../css/theme-workshop.css?1760245355" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.3.1.min.js?1760235269"></script>
+    <script src="../../js/jquery-3.3.1.min.js?1760245355"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -88,14 +88,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1760235269"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1760235269"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1760245355"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1760245355"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/minhduc123234.github.io\/Proposal-storm-Prediction\/\/vi";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1760235269"></script>
+<script type="text/javascript" src="../../js/search.js?1760245355"></script>
  
   </div>
 
@@ -980,14 +980,24 @@
                     <div class="progress">
   <div class="wrapper"><nav id="TableOfContents">
   <ul>
-    <li><a href="#giải-pháp-aws-serverless-hợp-nhất-cho-giám-sát-thời-tiết-thời-gian-thực">Giải pháp AWS Serverless hợp nhất cho giám sát thời tiết thời gian thực</a>
+    <li><a href="#tăng-cường-dữ-liệu-theo-từng-bước-phai-dần-theo-thời-gian-cho-dự-báo-chuỗi-thời-gian-và-học-máy-dựa-trên-vật-lý">Tăng cường dữ liệu theo từng bước phai dần theo thời gian cho dự báo chuỗi thời gian và Học máy dựa trên vật lý</a>
       <ul>
         <li><a href="#1-tóm-tắt-điều-hành">1. Tóm tắt điều hành</a></li>
         <li><a href="#2-tuyên-bố-vấn-đề">2. Tuyên bố vấn đề</a></li>
-        <li><a href="#3-kiến-trúc-giải-pháp">3. Kiến trúc giải pháp</a></li>
-        <li><a href="#4-triển-khai-kỹ-thuật">4. Triển khai kỹ thuật</a></li>
-        <li><a href="#5-lộ-trình--mốc-triển-khai">5. Lộ trình &amp; Mốc triển khai</a></li>
-        <li><a href="#6-ước-tính-ngân-sách">6. Ước tính ngân sách</a></li>
+        <li><a href="#vấn-để-hiện-tại">Vấn để hiện tại</a></li>
+        <li><a href="#giải-pháp">Giải Pháp</a></li>
+      </ul>
+    </li>
+    <li><a href="#a---tăng-cường-phai-dần-theo-từng-bước-theo-thời-gian">A - Tăng cường phai dần theo từng bước theo thời gian</a></li>
+    <li><a href="#b---học-máy-dựa-trên-vật-lý">B - Học máy dựa trên vật lý</a>
+      <ul>
+        <li><a href="#b1-công-thức-haversine">b.1 Công thức Haversine</a></li>
+        <li><a href="#b2-góc-phương-vị">b.2 Góc phương vị</a></li>
+        <li><a href="#lợi-ích-và-hiệu-quả-đầu-tư">Lợi ích và Hiệu quả đầu tư</a></li>
+        <li><a href="#3-kiến-trúc-giải-pháp">3. Kiến trúc Giải pháp</a></li>
+        <li><a href="#các-dịch-vụ-aws-được-sử-dụng">Các dịch vụ AWS được sử dụng</a></li>
+        <li><a href="#thiết-kế-thành-phần">Thiết kế thành phần</a></li>
+        <li><a href="#ước-tính-ngân-sách">Ước tính ngân sách</a></li>
         <li><a href="#7-đánh-giá-rủi-ro">7. Đánh giá rủi ro</a></li>
         <li><a href="#8-kết-quả-kỳ-vọng">8. Kết quả kỳ vọng</a></li>
       </ul>
@@ -1016,115 +1026,384 @@
 
 
 
-	
-<div
-  class="notices warning"
-  
->
-  <p>⚠️ <strong>Lưu ý:</strong> Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng <strong>không sao chép nguyên văn</strong> cho bài báo cáo của bạn kể cả warning này.</p>
-
-</div>
-
-<p>Tại phần này, bạn cần tóm tắt các nội dung trong workshop mà bạn <strong>dự tính</strong> sẽ làm.</p>
-<h1 id="iot-weather-platform-for-lab-research">IoT Weather Platform for Lab Research</h1>
-<h2 id="giải-pháp-aws-serverless-hợp-nhất-cho-giám-sát-thời-tiết-thời-gian-thực">Giải pháp AWS Serverless hợp nhất cho giám sát thời tiết thời gian thực</h2>
+	<h1 id="mô-hình-dự-báo-quỹ-đạo-bão">MÔ HÌNH DỰ BÁO QUỸ ĐẠO BÃO</h1>
+<h2 id="tăng-cường-dữ-liệu-theo-từng-bước-phai-dần-theo-thời-gian-cho-dự-báo-chuỗi-thời-gian-và-học-máy-dựa-trên-vật-lý">Tăng cường dữ liệu theo từng bước phai dần theo thời gian cho dự báo chuỗi thời gian và Học máy dựa trên vật lý</h2>
 <h3 id="1-tóm-tắt-điều-hành">1. Tóm tắt điều hành</h3>
-<p>IoT Weather Platform được thiết kế dành cho nhóm <em>ITea Lab</em> tại TP. Hồ Chí Minh nhằm nâng cao khả năng thu thập và phân tích dữ liệu thời tiết. Nền tảng hỗ trợ tối đa 5 trạm thời tiết, có khả năng mở rộng lên 10–15 trạm, sử dụng thiết bị biên Raspberry Pi kết hợp cảm biến ESP32 để truyền dữ liệu qua MQTT. Nền tảng tận dụng các dịch vụ AWS Serverless để cung cấp giám sát thời gian thực, phân tích dự đoán và tiết kiệm chi phí, với quyền truy cập giới hạn cho 5 thành viên phòng lab thông qua Amazon Cognito.</p>
+<p>Dự báo chuỗi thời gian là nền tảng của nhiều ứng dụng khoa học và công nghiệp, từ khí tượng học đến mô hình tài chính. Mặc dù các kiến trúc mô hình đã có nhiều tiến bộ, chất lượng và độ đa dạng của dữ liệu huấn luyện vẫn là yếu tố quyết định hiệu suất. Các kỹ thuật tăng cường dữ liệu hiện có — như nhiễu ngẫu nhiên, cắt nhỏ chuỗi, hoặc thêm nhiễu trắng — thường làm sai lệch mối quan hệ thời gian và không phản ánh được sự suy giảm tự nhiên của ảnh hưởng từ các sự kiện trong quá khứ. Khoảng trống này cho thấy cần có một phương pháp có nguyên tắc để vừa duy trì tính liên kết tuần tự vừa nắm bắt được quá trình phai dần của mức độ liên quan theo thời gian.</p>
+<p>Bản đề xuất này giới thiệu một khung tăng cường chuỗi thời gian mới có tên Stepwise Temporal Fading Augmentation (STFA). Khác với các phương pháp truyền thống dựa trên nhiễu hoặc biến đổi ngẫu nhiên, STFA mô phỏng sự suy giảm tự nhiên trong ảnh hưởng của các quan sát cũ bằng cách áp dụng trọng số phai dần cho các giá trị trước đó trong khi vẫn giữ nguyên các giá trị gần đây. Cách tiếp cận này tạo ra các chuỗi tổng hợp thực tế và đa dạng, giúp cải thiện độ bền vững của mô hình. Phương pháp này sẽ được đánh giá trong bài toán dự đoán quỹ đạo bão, vốn phụ thuộc vào dữ liệu chuỗi theo thứ tự vĩ độ–kinh độ. Ngoài ra, nguyên tắc Học máy dựa trên vật lý (Physics-Informed Machine Learning, PIML) được kết hợp bằng cách nhúng các mối quan hệ địa lý—như khoảng cách Haversine và góc phương vị (bearing)—vào cả tập đặc trưng và hàm mất mát. Thiết kế lai này kết hợp sự linh hoạt của học sâu với tính chặt chẽ của các ràng buộc vật lý, nhằm nâng cao độ chính xác và khả năng diễn giải của mô hình dự báo.</p>
 <h3 id="2-tuyên-bố-vấn-đề">2. Tuyên bố vấn đề</h3>
-<p><em>Vấn đề hiện tại</em><br>
-Các trạm thời tiết hiện tại yêu cầu thu thập dữ liệu thủ công, khó quản lý khi có nhiều trạm. Không có hệ thống tập trung cho dữ liệu hoặc phân tích thời gian thực, và các nền tảng bên thứ ba thường tốn kém và quá phức tạp.</p>
-<p><em>Giải pháp</em><br>
-Nền tảng sử dụng AWS IoT Core để tiếp nhận dữ liệu MQTT, AWS Lambda và API Gateway để xử lý, Amazon S3 để lưu trữ (bao gồm data lake), và AWS Glue Crawlers cùng các tác vụ ETL để trích xuất, chuyển đổi, tải dữ liệu từ S3 data lake sang một S3 bucket khác để phân tích. AWS Amplify với Next.js cung cấp giao diện web, và Amazon Cognito đảm bảo quyền truy cập an toàn. Tương tự như Thingsboard và CoreIoT, người dùng có thể đăng ký thiết bị mới và quản lý kết nối, nhưng nền tảng này hoạt động ở quy mô nhỏ hơn và phục vụ mục đích sử dụng nội bộ. Các tính năng chính bao gồm bảng điều khiển thời gian thực, phân tích xu hướng và chi phí vận hành thấp.</p>
-<p><em>Lợi ích và hoàn vốn đầu tư (ROI)</em><br>
-Giải pháp tạo nền tảng cơ bản để các thành viên phòng lab phát triển một nền tảng IoT lớn hơn, đồng thời cung cấp nguồn dữ liệu cho những người nghiên cứu AI phục vụ huấn luyện mô hình hoặc phân tích. Nền tảng giảm bớt báo cáo thủ công cho từng trạm thông qua hệ thống tập trung, đơn giản hóa quản lý và bảo trì, đồng thời cải thiện độ tin cậy dữ liệu. Chi phí hàng tháng ước tính 0,66 USD (theo AWS Pricing Calculator), tổng cộng 7,92 USD cho 12 tháng. Tất cả thiết bị IoT đã được trang bị từ hệ thống trạm thời tiết hiện tại, không phát sinh chi phí phát triển thêm. Thời gian hoàn vốn 6–12 tháng nhờ tiết kiệm đáng kể thời gian thao tác thủ công.</p>
-<h3 id="3-kiến-trúc-giải-pháp">3. Kiến trúc giải pháp</h3>
-<p>Nền tảng áp dụng kiến trúc AWS Serverless để quản lý dữ liệu từ 5 trạm dựa trên Raspberry Pi, có thể mở rộng lên 15 trạm. Dữ liệu được tiếp nhận qua AWS IoT Core, lưu trữ trong S3 data lake và xử lý bởi AWS Glue Crawlers và ETL jobs để chuyển đổi và tải vào một S3 bucket khác cho mục đích phân tích. Lambda và API Gateway xử lý bổ sung, trong khi Amplify với Next.js cung cấp bảng điều khiển được bảo mật bởi Cognito.</p>
-<p><img src="../../images/2-Proposal/edge_architecture.jpeg" alt="IoT Weather Station Architecture"></p>
-<p><img src="../../images/2-Proposal/platform_architecture.jpeg" alt="IoT Weather Platform Architecture"></p>
-<p><em>Dịch vụ AWS sử dụng</em></p>
+<h3 id="vấn-để-hiện-tại">Vấn để hiện tại</h3>
+<p>Dự báo chuỗi thời gian chính xác thường gặp hai thách thức lớn: thiếu đa dạng dữ liệu và thiếu cơ sở vật lý.</p>
 <ul>
-<li><em>AWS IoT Core</em>: Tiếp nhận dữ liệu MQTT từ 5 trạm, mở rộng lên 15.</li>
-<li><em>AWS Lambda</em>: Xử lý dữ liệu và kích hoạt Glue jobs (2 hàm).</li>
-<li><em>Amazon API Gateway</em>: Giao tiếp với ứng dụng web.</li>
-<li><em>Amazon S3</em>: Lưu trữ dữ liệu thô (data lake) và dữ liệu đã xử lý (2 bucket).</li>
-<li><em>AWS Glue</em>: Crawlers lập chỉ mục dữ liệu, ETL jobs chuyển đổi và tải dữ liệu.</li>
-<li><em>AWS Amplify</em>: Lưu trữ giao diện web Next.js.</li>
-<li><em>Amazon Cognito</em>: Quản lý quyền truy cập cho người dùng phòng lab.</li>
+<li>
+<p><strong>Thiếu dữ liệu</strong>: Nhiều bài toán dự báo chuỗi thời gian gặp hạn chế về lượng dữ liệu huấn luyện. Mặc dù có nhiều phương pháp tăng cường dữ liệu, rất ít trong số đó tập trung trực tiếp vào việc mô phỏng sự suy giảm tầm quan trọng của các giá trị trong quá khứ theo thời gian.</p>
+</li>
+<li>
+<p><strong>Bỏ qua yếu tố vật lý:</strong>: Hầu hết các mạng nơ-ron chỉ học từ dữ liệu thô mà không xét đến các ràng buộc vật lý trong thế giới thực. Trong các bài toán dự đoán quỹ đạo (ví dụ: bão), điều này thường dẫn đến những kết quả phi thực tế.</p>
+</li>
 </ul>
-<p><em>Thiết kế thành phần</em></p>
+<p>Mục tiêu của chúng tôi là:</p>
 <ul>
-<li><em>Thiết bị biên</em>: Raspberry Pi thu thập và lọc dữ liệu cảm biến, gửi tới IoT Core.</li>
-<li><em>Tiếp nhận dữ liệu</em>: AWS IoT Core nhận tin nhắn MQTT từ thiết bị biên.</li>
-<li><em>Lưu trữ dữ liệu</em>: Dữ liệu thô lưu trong S3 data lake; dữ liệu đã xử lý lưu ở một S3 bucket khác.</li>
-<li><em>Xử lý dữ liệu</em>: AWS Glue Crawlers lập chỉ mục dữ liệu; ETL jobs chuyển đổi để phân tích.</li>
-<li><em>Giao diện web</em>: AWS Amplify lưu trữ ứng dụng Next.js cho bảng điều khiển và phân tích thời gian thực.</li>
-<li><em>Quản lý người dùng</em>: Amazon Cognito giới hạn 5 tài khoản hoạt động.</li>
+<li>Phát triển một phương pháp tăng cường chuỗi thời gian mới (STFA) nhằm cải thiện độ bền vững và khả năng khái quát của mô hình.</li>
+<li>Tích hợp các ràng buộc dựa trên vật lý vào quá trình huấn luyện mô hình, thu hẹp khoảng cách giữa học máy dựa trên dữ liệu và động lực học của thế giới thực.</li>
 </ul>
-<h3 id="4-triển-khai-kỹ-thuật">4. Triển khai kỹ thuật</h3>
-<p><em>Các giai đoạn triển khai</em><br>
-Dự án gồm 2 phần — thiết lập trạm thời tiết biên và xây dựng nền tảng thời tiết — mỗi phần trải qua 4 giai đoạn:</p>
-<ol>
-<li><em>Nghiên cứu và vẽ kiến trúc</em>: Nghiên cứu Raspberry Pi với cảm biến ESP32 và thiết kế kiến trúc AWS Serverless (1 tháng trước kỳ thực tập).</li>
-<li><em>Tính toán chi phí và kiểm tra tính khả thi</em>: Sử dụng AWS Pricing Calculator để ước tính và điều chỉnh (Tháng 1).</li>
-<li><em>Điều chỉnh kiến trúc để tối ưu chi phí/giải pháp</em>: Tinh chỉnh (ví dụ tối ưu Lambda với Next.js) để đảm bảo hiệu quả (Tháng 2).</li>
-<li><em>Phát triển, kiểm thử, triển khai</em>: Lập trình Raspberry Pi, AWS services với CDK/SDK và ứng dụng Next.js, sau đó kiểm thử và đưa vào vận hành (Tháng 2–3).</li>
-</ol>
-<p><em>Yêu cầu kỹ thuật</em></p>
+<h3 id="giải-pháp">Giải Pháp</h3>
+<h2 id="a---tăng-cường-phai-dần-theo-từng-bước-theo-thời-gian">A - Tăng cường phai dần theo từng bước theo thời gian</h2>
+<p>STFA tạo ra các chuỗi thời gian tổng hợp bằng cách giảm dần ảnh hưởng của các giá trị trong quá khứ. Khác với phương pháp thêm nhiễu ngẫu nhiên, nó có áp dụng hệ thống các hệ số phai dần theo từng dải dữ liệu cũ.</p>
+<p>Giả sử một chuỗi đơn biến được cho bởi:</p>
+<p>$$
+X = [x_0, x_1, \ldots, x_{T-1}]
+$$</p>
+<p>trong đó $T$ là độ dài của chuỗi $X$.</p>
+<p><strong>Các tham số</strong>:</p>
 <ul>
-<li><em>Trạm thời tiết biên</em>: Cảm biến (nhiệt độ, độ ẩm, lượng mưa, tốc độ gió), vi điều khiển ESP32, Raspberry Pi làm thiết bị biên. Raspberry Pi chạy Raspbian, sử dụng Docker để lọc dữ liệu và gửi 1 MB/ngày/trạm qua MQTT qua Wi-Fi.</li>
-<li><em>Nền tảng thời tiết</em>: Kiến thức thực tế về AWS Amplify (lưu trữ Next.js), Lambda (giảm thiểu do Next.js xử lý), AWS Glue (ETL), S3 (2 bucket), IoT Core (gateway và rules), và Cognito (5 người dùng). Sử dụng AWS CDK/SDK để lập trình (ví dụ IoT Core rules tới S3). Next.js giúp giảm tải Lambda cho ứng dụng web fullstack.</li>
+<li>$n$: khoảng giá trị gần nhất muốn giữ nguyên</li>
+<li>$S$: số dải được áp dụng phai dần, mỗi dải được gán một hệ số nhân cố định.</li>
+<li>$L = T - n$: độ dài của vùng phai dần.</li>
+<li>$k = \frac{L}{S}$: số giá trị trong mỗi dải.</li>
+<li>$I_b$: tập chỉ số của dải thứ $b$.</li>
 </ul>
-<h3 id="5-lộ-trình--mốc-triển-khai">5. Lộ trình &amp; Mốc triển khai</h3>
+<p>\[
+I_b = {, i \mid L - b \cdot k ;\leq; i ;\leq; L - (b-1)\cdot k - 1 ,}
+\]</p>
+<p><strong>Biến đổi:</strong>:</p>
+<p>Ta ký hiệu chuỗi sau khi được tăng cường là:</p>
+<p>$$
+X = [x_0, \ldots, x_{T-1}]
+$$</p>
+<p>với các quy tắc biến đổi sau:</p>
+<p>$$
+x_t =
+\begin{cases}
+x_t, &amp; t \in {T-n, \ldots, T-1}, \\
+m_b , x_t, &amp; t \in I_b, \\
+m_{S+1} , x_t, &amp; t &lt; \min(I_S),
+\end{cases}
+$$</p>
+<p>trong đó các hệ số nhân $m_b \in (0,1)$ giảm dần một cách đơn điệu từ các dải dữ liệu mới đến các dải dữ liệu cũ.</p>
+<p>Công thức này duy trì độ chính xác của các dữ liệu gần đây trong khi kiểm soát chặt chẽ hơn ảnh hưởng của các giá trị xa trong chuỗi. Quá trình tăng cường buộc mô hình tập trung vào các mẫu bền vững vượt ra ngoài dữ liệu gốc, đồng thời tăng tính đa dạng dựa trên các tham số đã chọn.</p>
+<h2 id="b---học-máy-dựa-trên-vật-lý">B - Học máy dựa trên vật lý</h2>
+<p>Các mô hình mạng nơ-ron như <strong>RNNs</strong>, <strong>CNNs</strong>, và <strong>Transformers</strong> không cần công thức hay quy tắc đặc thù cho từng tác vụ để đạt hiệu suất tốt, miễn là chúng được huấn luyện với đủ dữ liệu.
+Ví dụ, trong bài toán dịch máy như dịch từ tiếng Đức sang tiếng Anh bằng RNN, không có quy tắc ngữ pháp nào được cung cấp trong quá trình huấn luyện. Tuy nhiên, mô hình vẫn có thể tạo ra bản dịch mạch lạc, thể hiện một trong những điểm mạnh chính của học sâu: khả năng học trực tiếp các mẫu phức tạp từ dữ liệu.</p>
+<p>Ngược lại, các phương pháp truyền thống — chẳng hạn như các hệ thống dịch dựa trên quy tắc (ví dụ Google Translate trước những năm 2000) — phụ thuộc nhiều vào quy tắc ngữ pháp và từ điển.
+Mặc dù chính xác, nhưng các hệ thống này thường thiếu linh hoạt và thất bại khi gặp từ có nhiều nghĩa hoặc các cấu trúc phụ thuộc vào ngữ cảnh.</p>
+<p>Lấy cảm hứng từ sự khác biệt đó, mục tiêu của chúng tôi là kết hợp sức mạnh của học sâu với các công thức do con người định nghĩa để đạt hiệu suất tốt hơn.
+Cụ thể, trong mô hình dự đoán chuyển động bão của chúng tôi — nơi áp dụng <strong>Stepwise Temporal Fading Augmentation (STFA)</strong> — chúng tôi đưa vào quá trình huấn luyện hai công thức dựa trên vật lý: <strong>khoảng cách Haversine</strong> và <strong>góc phương vị</strong> (bearing).
+Hai yếu tố này cung cấp cho mô hình cấu trúc bổ sung và định hướng học tập, giúp mô hình hiểu sâu hơn ngoài các mối tương quan thuần thống kê.</p>
+<hr>
+<h3 id="b1-công-thức-haversine">b.1 Công thức Haversine</h3>
+<p><strong>Công thức Haversine</strong> được sử dụng rộng rãi để tính khoảng cách đường tròn lớn giữa hai điểm trên bề mặt hình cầu:</p>
+<p>$$
+d = 2r , \arcsin!\left(
+\sqrt{
+\sin^2!\left(\frac{\Delta \varphi}{2}\right)
++ \cos(\varphi_1)\cos(\varphi_2)
+\sin^2!\left(\frac{\Delta \lambda}{2}\right)
+}
+\right)
+$$</p>
+<p><strong>Trong đó:</strong>
+$\varphi_1, \lambda_1$ và $\varphi_2, \lambda_2$ là vĩ độ và kinh độ của hai điểm (tính bằng radian).</p>
 <ul>
-<li><em>Trước thực tập (Tháng 0)</em>: 1 tháng lên kế hoạch và đánh giá trạm cũ.</li>
-<li><em>Thực tập (Tháng 1–3)</em>:
+<li>
+<p>$\Delta \varphi = \varphi_2 - \varphi_1$</p>
+</li>
+<li>
+<p>$\Delta \lambda = \lambda_2 - \lambda_1$</p>
+</li>
+</ul>
+<p>$r$ là bán kính Trái Đất (≈ 6.371 km).</p>
+<p>Vì Trái Đất có dạng gần hình cầu, nên công thức Haversine cung cấp một phép xấp xỉ rất chính xác, với sai số nhỏ hơn 1% trong hầu hết các trường hợp.</p>
+<p>Trong khung mô hình của chúng tôi, thay vì chỉ dựa vào các hàm mất mát tiêu chuẩn như <strong>MSE</strong>, <strong>RMSE</strong>, hoặc <strong>MAPE</strong>, chúng tôi đề xuất sử dụng công thức Haversine làm <strong>hàm mất mát</strong> (main loss).
+Bởi vì mô hình đầu ra là các tọa độ vĩ độ và kinh độ của vị trí bão kế tiếp, công thức Haversine cho phép đo trực tiếp khoảng cách giữa điểm dự đoán và điểm thực tế.</p>
+<p>Khoảng cách càng gần 0 cho thấy dự đoán càng chính xác, trong khi khoảng cách lớn cho thấy sai số đáng kể.
+Hàm mất mát dựa trên khoảng cách này cũng có thể được kết hợp với các cơ chế huấn luyện phổ biến như <strong>điều chỉnh tốc độ học</strong> (learning rate scheduler) và <strong>dừng sớm</strong> (early stopping) để tận dụng tối đa hiệu quả của nó.</p>
+<hr>
+<h3 id="b2-góc-phương-vị">b.2 Góc phương vị</h3>
+<p><strong>Công thức góc phương vị</strong> cho biết hướng đi từ một địa điểm địa lý đến điểm khác theo cung tròn lớn:</p>
+<p>$$\theta = \text{atan2}!\left(\sin(\Delta \lambda)\cos(\varphi_2),, \cos(\varphi_1)\sin(\varphi_2) - \sin(\varphi_1)\cos(\varphi_2)\cos(\Delta \lambda)\right)$$</p>
+<p><strong>Trong dó:</strong></p>
 <ul>
-<li>Tháng 1: Học AWS và nâng cấp phần cứng.</li>
-<li>Tháng 2: Thiết kế và điều chỉnh kiến trúc.</li>
-<li>Tháng 3: Triển khai, kiểm thử, đưa vào sử dụng.</li>
+<li>
+<p>$(\varphi_1, \lambda_1)$ là điểm bắt đầu.</p>
+</li>
+<li>
+<p>$(\varphi_2, \lambda_2)$ là điểm kết thúc.</p>
+</li>
+<li>
+<p>$\Delta \lambda$ là hiệu (sự chênh lệch) kinh độ.</p>
+</li>
+</ul>
+<p>Trong quá trình triển khai, chúng tôi sử dụng cả <strong>công thức Haversine</strong> và <strong>góc phương vị</strong> (bearing) để tính toán hai đặc trưng bổ sung — “khoảng cách” và “góc” — và thêm chúng vào tập dữ liệu.
+Những đặc trưng này giúp mô hình có thêm thông tin phong phú hơn về quỹ đạo của bão, đồng thời vẫn giữ mục tiêu cốt lõi là dự đoán vị trí địa lý tiếp theo.</p>
+<h3 id="lợi-ích-và-hiệu-quả-đầu-tư">Lợi ích và Hiệu quả đầu tư</h3>
+<ul>
+<li>
+<p><strong>Tăng hiệu suất</strong>: STFA tạo ra các chuỗi tổng hợp có cấu trúc, giúp tăng độ bền vững của mô hình, giảm hiện tượng overfitting và cải thiện khả năng khái quát trên các quỹ đạo bão chưa từng thấy.</p>
+</li>
+<li>
+<p><strong>Nhận thức vật lý</strong>: Việc tích hợp các nguyên lý địa lý như khoảng cách và góc phương vị giúp tăng khả năng diễn giải và đảm bảo kết quả dự đoán phù hợp với các ràng buộc vật lý.</p>
+</li>
+<li>
+<p><strong>Hướng nghiên cứu mới</strong>: Thiết lập một mô hình tăng cường chuỗi thời gian mới dựa trên sự phai dần của mức độ liên quan theo thời gian, mở rộng phương pháp luận cho các bài toán học chuỗi.</p>
+</li>
+<li>
+<p><strong>Scalability and Reusability</strong>: Khung kết hợp STFA + PIML có thể được mở rộng cho các lĩnh vực dự báo chuỗi khác như nhu cầu năng lượng, lưu lượng giao thông và xu hướng tài chính.</p>
+</li>
+</ul>
+<p><strong>Tác động tổng thể</strong>: Bằng cách cải thiện độ ổn định và khả năng diễn giải của mô hình trong khi vẫn duy trì tính mở rộng, phương pháp được đề xuất mang lại cả giá trị khoa học lẫn hiệu quả thực tiễn trong đầu tư tính toán.</p>
+<h3 id="3-kiến-trúc-giải-pháp">3. Kiến trúc Giải pháp</h3>
+<p>Nền tảng tích hợp một quy trình dự đoán quỹ đạo bão với việc triển khai AWS có khả năng mở rộng. Dữ liệu bão thô được tiền xử lý thành các tập dữ liệu tuần tự và xử lý qua hai giai đoạn: Giai đoạn 1 học các đặc trưng không-thời gian, trong khi Giai đoạn 2 sử dụng Transformer có trọng số STFA để dự báo quỹ đạo. Kết quả được hợp nhất trong Bộ tổng hợp Quỹ đạo và được đánh giá thông qua các số liệu định lượng và hình ảnh hóa. Hệ thống chạy trên ngăn xếp serverless của AWS sử dụng ECS, Lambda và S3 để xử lý và lưu trữ, với CloudFront và Route 53 cung cấp một bảng điều khiển dự đoán an toàn, có thể mở rộng.</p>
+<p><img src="../../images/2-Proposal/ssv.png" alt="IoT Weather Station Architecture"></p>
+<p><img src="../../images/2-Proposal/platform_architecture.png" alt="Platform Architecture"></p>
+<h3 id="các-dịch-vụ-aws-được-sử-dụng">Các dịch vụ AWS được sử dụng</h3>
+<h4 id="1-frontend--cdn">1. Frontend &amp; CDN</h4>
+<ul>
+<li><strong>Amazon S3</strong>: Lưu trữ các tệp tĩnh được build từ React + Vite (2 bucket: frontend và dữ liệu thời tiết).</li>
+<li><strong>Amazon CloudFront</strong>: Phân phối CDN toàn cầu cho ứng dụng React, đồng thời cache các tài nguyên tĩnh.</li>
+<li><strong>Route 53</strong>: Quản lý DNS và định tuyến chứng chỉ SSL.</li>
+<li><strong>AWS Certificate Manager (ACM)</strong>: Cung cấp chứng chỉ SSL/TLS miễn phí.</li>
+</ul>
+<h4 id="2-dịch-vụ-backend">2. Dịch vụ Backend</h4>
+<ul>
+<li><strong>Amazon EC2</strong>: Chạy ứng dụng .NET Core API trong một container Docker.</li>
+<li><strong>Amazon RDS (PostgreSQL)</strong>: Cơ sở dữ liệu chính lưu trữ dữ liệu bão và lịch sử dự đoán.</li>
+</ul>
+<h4 id="3-ml--xử-lý-dữ-liệu">3. ML &amp; Xử lý dữ liệu</h4>
+<ul>
+<li><strong>AWS Lambda</strong>:
+<ul>
+<li>Lambda Container dùng cho suy luận ML (Python + TensorFlow, tải mô hình <code>.h5</code>).</li>
+<li>Lambda Function dùng cho việc thu thập dữ liệu (chạy theo lịch định sẵn).</li>
 </ul>
 </li>
-<li><em>Sau triển khai</em>: Nghiên cứu thêm trong vòng 1 năm.</li>
+<li><strong>Amazon EFS (Elastic File System)</strong>: Lưu trữ tệp mô hình <code>.h5</code> (dùng chung cho Lambda).</li>
+<li><strong>Amazon S3</strong>: Làm data lake cho dữ liệu thời tiết thô và sao lưu mô hình ML.</li>
+<li><strong>Amazon EventBridge</strong>: Bộ lập lịch cho việc thu thập dữ liệu tự động (cron job theo giờ/ngày).</li>
 </ul>
-<h3 id="6-ước-tính-ngân-sách">6. Ước tính ngân sách</h3>
-<p>Có thể xem chi phí trên <a href="https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01">AWS Pricing Calculator</a><br>
-Hoặc tải <a href="../attachments/budget_estimation.pdf">tệp ước tính ngân sách</a>.</p>
-<p><em>Chi phí hạ tầng</em></p>
+<h4 id="4-bảo-mật--giám-sát">4. Bảo mật &amp; Giám sát</h4>
 <ul>
-<li>AWS Lambda: 0,00 USD/tháng (1.000 request, 512 MB lưu trữ).</li>
-<li>S3 Standard: 0,15 USD/tháng (6 GB, 2.100 request, 1 GB quét).</li>
-<li>Truyền dữ liệu: 0,02 USD/tháng (1 GB vào, 1 GB ra).</li>
-<li>AWS Amplify: 0,35 USD/tháng (256 MB, request 500 ms).</li>
-<li>Amazon API Gateway: 0,01 USD/tháng (2.000 request).</li>
-<li>AWS Glue ETL Jobs: 0,02 USD/tháng (2 DPU).</li>
-<li>AWS Glue Crawlers: 0,07 USD/tháng (1 crawler).</li>
-<li>MQTT (IoT Core): 0,08 USD/tháng (5 thiết bị, 45.000 tin nhắn).</li>
+<li><strong>Amazon CloudWatch</strong>: Ghi log, thu thập chỉ số và giám sát tất cả dịch vụ.</li>
+<li><strong>AWS Secrets Manager</strong>: Quản lý khóa API, thông tin đăng nhập cơ sở dữ liệu và token bên thứ ba.</li>
+<li><strong>VPC + Security Groups</strong>: Cô lập mạng và kiểm soát truy cập.</li>
 </ul>
-<p><em>Tổng</em>: 0,7 USD/tháng, 8,40 USD/12 tháng</p>
+<h4 id="5-cicd">5. CI/CD</h4>
 <ul>
-<li><em>Phần cứng</em>: 265 USD một lần (Raspberry Pi 5 và cảm biến).</li>
+<li><strong>GitHub Actions</strong>: Tự động hóa pipeline CI/CD để triển khai (dịch vụ ngoài AWS).</li>
+<li><strong>Amazon ECR (Elastic Container Registry)</strong>: Lưu trữ Docker images cho EC2 và Lambda.</li>
 </ul>
+<h3 id="thiết-kế-thành-phần">Thiết kế thành phần</h3>
+<h4 id="kiến-trúc-hệ-thống">Kiến trúc hệ thống</h4>
+<h4 id="1-lớp-giao-diện-người-dùng">1. Lớp giao diện người dùng</h4>
+<ul>
+<li><strong>Frontend</strong>: Ứng dụng React + Vite được lưu trữ trên Amazon S3 và phân phối qua CloudFront CDN.</li>
+<li><strong>Authentication</strong>: <em>(Tùy chọn)</em> Amazon Cognito để quản lý người dùng nếu cần đăng nhập.</li>
+<li><strong>Cập nhật theo thời gian thực (Real-time Updates)</strong>: WebSocket hoặc API polling để hiển thị dự đoán theo thời gian thực.</li>
+</ul>
+<h4 id="2-lớp-api">2. Lớp API</h4>
+<ul>
+<li><strong>Backend API</strong>: Một instance EC2 chạy .NET Core Web API.
+<ul>
+<li><strong>Route 1</strong>: <code>/api/typhoons</code> – Các thao tác CRUD.</li>
+<li><strong>Route 2</strong>: <code>/api/predict</code> – Endpoint cho mô hình dự đoán học máy.</li>
+<li><strong>Route 3</strong>: <code>/api/weather</code> – API dữ liệu thời tiết.</li>
+</ul>
+</li>
+<li><strong>Caching</strong>: Sử dụng bộ nhớ đệm (in-memory caching) trong .NET API để cải thiện hiệu suất.</li>
+</ul>
+<h4 id="3-lớp-lưu-trữ-dữ-liệu">3. Lớp lưu trữ dữ liệu</h4>
+<ul>
+<li><strong>Database</strong>: Amazon RDS (PostgreSQL) lưu trữ:
+<ul>
+<li>Dữ liệu lịch sử bão (vị trí, thời gian, cường độ).</li>
+<li>Kết quả dự đoán.</li>
+<li>Dữ liệu người dùng (nếu có xác thực).</li>
+</ul>
+</li>
+<li><strong>Data Lake</strong>: Các bucket Amazon S3 lưu trữ:
+<ul>
+<li>Dữ liệu thời tiết thô (JSON/CSV từ API bên ngoài).</li>
+<li>Tệp mô hình học máy (<code>.h5</code>, <code>.pkl</code>).</li>
+<li>Log và bản sao lưu (backups).</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-dịch-vụ-dự-đoán-ml">4. Dịch vụ dự đoán ML</h4>
+<ul>
+<li><strong>Lambda Container</strong>:
+<ul>
+<li><strong>Đầu vào</strong>: Dữ liệu đặc trưng bão.</li>
+<li><strong>Xử lý</strong>: Tải <code>model.h5</code> từ EFS → Dự đoán hướng di chuyển.</li>
+<li><strong>Đầu ra</strong>: Hướng di chuyển, độ tin cậy (confidence score) và xác suất dự đoán.</li>
+</ul>
+</li>
+<li><strong>EFS Mount</strong>: Lambda gắn EFS để truy cập tệp <code>model.h5</code> (giúp tránh tải lại khi khởi động).</li>
+<li><strong>Luồng xử lý (Workflow)</strong>:
+<ul>
+<li>
+<ol>
+<li>.NET API nhận yêu cầu dự đoán từ người dùng.</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>API gọi Lambda Function URL.</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>Lambda tải mô hình từ EFS.</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>Lambda lấy dữ liệu thời tiết từ S3.</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>Lambda thực hiện suy luận (inference).</li>
+</ol>
+</li>
+<li>
+<ol start="6">
+<li>Trả kết quả dự đoán về .NET API.</li>
+</ol>
+</li>
+<li>
+<ol start="7">
+<li>API phản hồi kết quả cho người dùng.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-pipeline-thu-thập-dữ-liệu">5. Pipeline thu thập dữ liệu</h4>
+<ul>
+<li><strong>EventBridge Scheduler</strong>: Kích hoạt Lambda mỗi 1 giờ.</li>
+<li><strong>Lambda Data Collector</strong>:
+<ul>
+<li>Gọi các API thời tiết bên ngoài.</li>
+<li>Phân tích cú pháp và kiểm tra tính hợp lệ của dữ liệu.</li>
+<li>Lưu dữ liệu thô vào S3.</li>
+<li>Cập nhật dữ liệu đã xử lý vào RDS.</li>
+</ul>
+</li>
+<li><strong>Tích hợp đội AI</strong>:
+<ul>
+<li>Đội AI tải mô hình <code>model.h5</code> mới lên EFS.</li>
+<li>Lambda tự động tải lại mô hình ở lần chạy kế tiếp.</li>
+</ul>
+</li>
+</ul>
+<h4 id="6-giám-sát--bảo-mật">6. Giám sát &amp; Bảo mật</h4>
+<ul>
+<li><strong>CloudWatch</strong>:
+<ul>
+<li>Thu thập log từ EC2, Lambda và RDS.</li>
+<li>Giám sát các chỉ số: CPU, bộ nhớ, số lượng yêu cầu, tỷ lệ lỗi.</li>
+<li>Thiết lập cảnh báo (alarms) khi tỷ lệ lỗi cao, độ trễ lớn hoặc hệ thống giảm khả dụng.</li>
+</ul>
+</li>
+<li><strong>Secrets Manager</strong>: Lưu trữ:
+<ul>
+<li>Thông tin đăng nhập RDS.</li>
+<li>API keys từ các nguồn dữ liệu thời tiết bên ngoài.</li>
+</ul>
+</li>
+</ul>
+<h3 id="ước-tính-ngân-sách">Ước tính ngân sách</h3>
+<h4 id="chi-phí-hạ-tầng---hàng-tháng-ap-southeast-1-singapore">Chi phí hạ tầng - Hàng tháng (ap-southeast-1 Singapore)</h4>
+<h4 id="frontend--cdn">Frontend &amp; CDN</h4>
+<ul>
+<li><strong>S3 Standard</strong>: $0.50/tháng (5GB lưu trữ, 10GB truyền tải)</li>
+<li><strong>CloudFront</strong>: $4.25/tháng (50GB truyền dữ liệu, 1 triệu yêu cầu)</li>
+<li><strong>Route 53</strong>: $0.50/tháng (1 vùng lưu trữ, 1 triệu truy vấn)</li>
+<li><strong>ACM (SSL)</strong>: $0.00/tháng (Miễn phí)</li>
+</ul>
+<p><strong>Tổng: $5.25/tháng</strong></p>
+<h4 id="dịch-vụ-backend">Dịch vụ Backend</h4>
+<ul>
+<li><strong>EC2</strong>: ~$15.00/tháng (t4g.small instance, ARM, on-demand)</li>
+<li><strong>RDS PostgreSQL</strong>: $20.00/tháng (db.t3.micro, 20GB SSD)</li>
+</ul>
+<p><strong>Tổng: $35.00/tháng</strong></p>
+<h4 id="ml--xử-lý-dữ-liệu">ML &amp; Xử lý dữ liệu</h4>
+<ul>
+<li><strong>Lambda Container</strong>: $5.00/tháng (1.000 lần gọi/ngày × 2GB RAM × 3 giây)</li>
+<li><strong>Lambda Data Collector</strong>: $0.50/tháng (24 lần gọi/ngày × 512MB × 30 giây)</li>
+<li><strong>EFS</strong>: $0.33/tháng (1GB lưu trữ – model.h5)</li>
+<li><strong>S3 Data Lake</strong>: $1.50/tháng (50GB dữ liệu thời tiết, 10GB truyền tải)</li>
+<li><strong>EventBridge</strong>: $0.00/tháng (730 sự kiện định kỳ/tháng)</li>
+</ul>
+<p><strong>Tổng: $7.33/tháng</strong></p>
+<h4 id="bảo-mật--giám-sát">Bảo mật &amp; Giám sát</h4>
+<ul>
+<li><strong>CloudWatch Logs</strong>: $2.50/tháng (5GB dữ liệu log, 1GB lưu trữ)</li>
+<li><strong>CloudWatch Metrics</strong>: $0.60/tháng (20 chỉ số tùy chỉnh)</li>
+<li><strong>Secrets Manager</strong>: $2.00/tháng (5 bí mật)</li>
+</ul>
+<p><strong>Tổng: $5.10/tháng</strong></p>
+<h4 id="mạng-networking">Mạng (Networking)</h4>
+<ul>
+<li><strong>VPC</strong>: $0.00/tháng (Miễn phí – không dùng VPN hoặc PrivateLink)</li>
+<li><strong>Data Transfer (Outbound)</strong>: $1.80/tháng (20GB ra Internet)</li>
+<li><strong>ECR</strong>: $0.10/tháng (1GB lưu trữ)</li>
+</ul>
+<p><strong>Tổng: $1.90/tháng</strong></p>
+<h4 id="tổng-cộng"><strong>TỔNG CỘNG</strong></h4>
+<ul>
+<li><strong>Frontend &amp; CDN</strong>: $5.25/tháng</li>
+<li><strong>Dịch vụ Backend</strong>: $35.00/tháng</li>
+<li><strong>ML &amp; Xử lý dữ liệu</strong>: $7.33/tháng</li>
+<li><strong>Bảo mật &amp; Giám sát</strong>: $5.10/tháng</li>
+<li><strong>Mạng (Networking)</strong>: $1.90/tháng</li>
+</ul>
+<p><strong>Tổng chi phí hàng tháng: $54.58/tháng</strong></p>
 <h3 id="7-đánh-giá-rủi-ro">7. Đánh giá rủi ro</h3>
-<p><em>Ma trận rủi ro</em></p>
+<h4 id="ma-trận-rủi-ro">Ma trận rủi ro</h4>
 <ul>
-<li>Mất mạng: Ảnh hưởng trung bình, xác suất trung bình.</li>
-<li>Hỏng cảm biến: Ảnh hưởng cao, xác suất thấp.</li>
-<li>Vượt ngân sách: Ảnh hưởng trung bình, xác suất thấp.</li>
+<li>Quá tải ECS Fargate: <strong>Tác động cao</strong>, <strong>xác suất trung bình</strong>.</li>
+<li>Độ trễ khởi động lạnh của Lambda: <strong>Tác động trung bình</strong>, <strong>xác suất cao</strong>.</li>
+<li>Lỗi Redis Cache: <strong>Tác động trung bình</strong>, <strong>xác suất trung bình</strong>.</li>
+<li>Sự cố RDS Single-AZ: <strong>Tác động cao</strong>, <strong>xác suất trung bình</strong>.</li>
+<li>Lỗi EventBridge hoặc Data Collector: <strong>Tác động trung bình</strong>, <strong>xác suất trung bình</strong>.</li>
+<li>Rò rỉ API Key hoặc thông tin xác thực: <strong>Tác động cao</strong>, <strong>xác suất trung bình</strong>.</li>
+<li>Tấn công DDoS / brute-force: <strong>Tác động cao</strong>, <strong>xác suất trung bình</strong>.</li>
+<li>Chi phí AWS tăng đột biến ngoài dự kiến: <strong>Tác động trung bình</strong>, <strong>xác suất cao</strong>.</li>
+<li>Dung lượng S3 Data Lake tăng quá mức: <strong>Tác động trung bình</strong>, <strong>xác suất trung bình</strong>.</li>
+<li>Cập nhật mô hình không được theo dõi: <strong>Tác động cao</strong>, <strong>xác suất trung bình</strong>.</li>
 </ul>
-<p><em>Chiến lược giảm thiểu</em></p>
+<h4 id="chiến-lược-giảm-thiểu">Chiến lược giảm thiểu</h4>
 <ul>
-<li>Mạng: Lưu trữ cục bộ trên Raspberry Pi với Docker.</li>
-<li>Cảm biến: Kiểm tra định kỳ, dự phòng linh kiện.</li>
-<li>Chi phí: Cảnh báo ngân sách AWS, tối ưu dịch vụ.</li>
+<li><strong>Tầng tính toán (ECS, Lambda):</strong> Dùng Auto Scaling và gắn EFS để tránh quá tải và giảm khởi động lạnh.</li>
+<li><strong>Bộ nhớ đệm &amp; Cơ sở dữ liệu:</strong> Thiết lập Multi-AZ cho RDS và ElastiCache, kèm logic dự phòng khi cache lỗi.</li>
+<li><strong>Bảo mật:</strong> Lưu khóa bí mật trong AWS Secrets Manager, áp dụng WAF để giới hạn tần suất và chặn SQLi/XSS.</li>
+<li><strong>Kiểm soát chi phí:</strong> Dùng AWS Budgets và cảnh báo CloudWatch; thiết lập VPC Endpoint để giảm chi phí NAT; quy tắc vòng đời S3 để lưu trữ lâu dài.</li>
+<li><strong>Quản lý dữ liệu &amp; mô hình ML:</strong> Lưu phiên bản mô hình trong RDS và tự động tải lại qua EventBridge.</li>
+<li><strong>Giám sát:</strong> Dùng bảng điều khiển CloudWatch, cảnh báo và thông báo SNS cho ECS, Lambda, ALB, và RDS.</li>
 </ul>
-<p><em>Kế hoạch dự phòng</em></p>
+<h4 id="kế-hoạch-dự-phòng">Kế hoạch dự phòng</h4>
 <ul>
-<li>Quay lại thu thập thủ công nếu AWS gặp sự cố.</li>
-<li>Sử dụng CloudFormation để khôi phục cấu hình liên quan đến chi phí.</li>
+<li><strong>Sự cố hệ thống:</strong> RDS Multi-AZ cùng sao lưu S3; triển khai lại ECS qua CloudFormation.</li>
+<li><strong>Lỗi dịch vụ dự đoán:</strong> Cung cấp dự đoán cuối cùng từ Redis cho đến khi khôi phục.</li>
+<li><strong>Lỗi pipeline dữ liệu:</strong> Lưu tạm dữ liệu đến trong S3 buffer cho đến khi Lambda hoạt động lại.</li>
+<li><strong>Vượt chi phí:</strong> Tự động giảm quy mô ECS và Lambda bằng trigger CloudWatch.</li>
+<li><strong>Rò rỉ bảo mật:</strong> Thay đổi thông tin trong Secrets Manager và cô lập các vai trò IAM bị ảnh hưởng.</li>
 </ul>
 <h3 id="8-kết-quả-kỳ-vọng">8. Kết quả kỳ vọng</h3>
-<p><em>Cải tiến kỹ thuật</em>: Dữ liệu và phân tích thời gian thực thay thế quy trình thủ công. Có thể mở rộng tới 10–15 trạm.<br>
-<em>Giá trị dài hạn</em>: Nền tảng dữ liệu 1 năm cho nghiên cứu AI, có thể tái sử dụng cho các dự án tương lai.</p>
+<h4 id="cải-tiến-kỹ-thuật"><strong>Cải tiến kỹ thuật</strong></h4>
+<ul>
+<li>Tự động hóa dự đoán quỹ đạo bão, thay thế quy trình phân tích thủ công.</li>
+<li>Nâng cao độ chính xác dự báo nhờ mô hình Transformer có trọng số STFA.</li>
+<li>Xây dựng pipeline mở rộng trên AWS, hỗ trợ thu thập dữ liệu và huấn luyện theo thời gian thực.</li>
+</ul>
+<h4 id="giá-trị-dài-hạn"><strong>Giá trị dài hạn</strong></h4>
+<ul>
+<li>Hình thành bộ dữ liệu quỹ đạo bão kéo dài trong năm, phục vụ nghiên cứu AI và khí hậu nâng cao.</li>
+<li>Cung cấp kiến trúc gốc trên đám mây, tái sử dụng cho các dự án dự báo không gian-thời gian khác.</li>
+<li>Cho phép tích hợp thêm trạm thời tiết IoT và API khí tượng bên ngoài.</li>
+</ul>
 
 
 
@@ -1825,19 +2104,19 @@ Hoặc tải <a href="../attachments/budget_estimation.pdf">tệp ước tính n
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1760235269"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1760235269"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1760235269"></script>
-    <script src="../../js/jquery.sticky.js?1760235269"></script>
-    <script src="../../js/featherlight.min.js?1760235269"></script>
-    <script src="../../js/highlight.pack.js?1760235269"></script>
+    <script src="../../js/clipboard.min.js?1760245355"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1760245355"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1760245355"></script>
+    <script src="../../js/jquery.sticky.js?1760245355"></script>
+    <script src="../../js/featherlight.min.js?1760245355"></script>
+    <script src="../../js/highlight.pack.js?1760245355"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1760235269"></script>
-    <script src="../../js/learn.js?1760235269"></script>
-    <script src="../../js/hugo-learn.js?1760235269"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1760245355"></script>
+    <script src="../../js/learn.js?1760245355"></script>
+    <script src="../../js/hugo-learn.js?1760245355"></script>
 
-    <link href="../../mermaid/mermaid.css?1760235269" rel="stylesheet" />
-    <script src="../../mermaid/mermaid.js?1760235269"></script>
+    <link href="../../mermaid/mermaid.css?1760245355" rel="stylesheet" />
+    <script src="../../mermaid/mermaid.js?1760245355"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

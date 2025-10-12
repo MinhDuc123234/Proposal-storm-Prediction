@@ -15,21 +15,21 @@
     <title>Proposal :: Internship Report</title>
 
     
-    <link href="../../css/nucleus.css?1760235269" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1760235269" rel="stylesheet">
-    <link href="../../css/hybrid.css?1760235269" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1760235269" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1760235269" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1760235269" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1760235269" rel="stylesheet">
-    <link href="../../css/theme.css?1760235269" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1760235269" rel="stylesheet">
+    <link href="../../css/nucleus.css?1760245355" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1760245355" rel="stylesheet">
+    <link href="../../css/hybrid.css?1760245355" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1760245355" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1760245355" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1760245355" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1760245355" rel="stylesheet">
+    <link href="../../css/theme.css?1760245355" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1760245355" rel="stylesheet">
     
-    <link href="../../css/theme-workshop.css?1760235269" rel="stylesheet">
+    <link href="../../css/theme-workshop.css?1760245355" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.3.1.min.js?1760235269"></script>
+    <script src="../../js/jquery-3.3.1.min.js?1760245355"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -88,14 +88,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1760235269"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1760235269"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1760245355"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1760245355"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/minhduc123234.github.io\/Proposal-storm-Prediction\/\/en";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1760235269"></script>
+<script type="text/javascript" src="../../js/search.js?1760245355"></script>
  
   </div>
 
@@ -990,14 +990,13 @@
     </li>
     <li><a href="#b-physics-informed-machine-learning">B) Physics-Informed Machine Learning</a>
       <ul>
-        <li><a href="#b1-haversine-formula">b.1 Haversine Formula</a></li>
+        <li><a href="#b1-haversine">b.1 Haversine</a></li>
         <li><a href="#b2-bearing">b.2 Bearing</a></li>
         <li><a href="#benefits-and-return-on-investment">Benefits and Return on Investment</a></li>
         <li><a href="#3-solution-architecture">3. Solution Architecture</a></li>
         <li><a href="#aws-services-used">AWS Services Used</a></li>
         <li><a href="#component-design">Component Design</a></li>
         <li><a href="#budget-estimation">Budget Estimation</a></li>
-        <li><a href="#infrastructure-costs">Infrastructure Costs</a></li>
         <li><a href="#7-risk-assessment">7. Risk Assessment</a></li>
         <li><a href="#8-expected-outcomes">8. Expected Outcomes</a></li>
       </ul>
@@ -1091,45 +1090,40 @@ While precise, such systems often lacked flexibility and failed when encounterin
 Specifically, in our hurricane movement prediction model where we implement <strong>Stepwise Temporal Fading Augmentation (STFA)</strong>, we introduce two physics-based formulas into training: the <strong>Haversine distance</strong> and the <strong>bearing</strong>.<br>
 These provide the model with additional structure and inductive bias, guiding learning beyond purely statistical correlations.</p>
 <hr>
-<h3 id="b1-haversine-formula">b.1 Haversine Formula</h3>
-<p>The <strong>Haversine formula</strong> is widely used to compute the great-circle distance between two points on the surface of a sphere:</p>
+<h3 id="b1-haversine">b.1 Haversine</h3>
+<p>TThe <strong>Haversine formula</strong> is used to calculate the great-circle distance between two points on the surface of a sphere — that is, the shortest path over the Earth’s surface.</p>
 <p>$$
-\theta = \text{atan2}!\left(
-\sin(\Delta \lambda)\cos(\varphi_2),,
-\cos(\varphi_1)\sin(\varphi_2)</p>
-<ul>
-<li>\sin(\varphi_1)\cos(\varphi_2)\cos(\Delta \lambda)
+d = 2r , \arcsin!\left(
+\sqrt{
+\sin^2!\left(\frac{\Delta \varphi}{2}\right)
++ \cos(\varphi_1)\cos(\varphi_2)
+\sin^2!\left(\frac{\Delta \lambda}{2}\right)
+}
 \right)
-$$</li>
-</ul>
+$$</p>
 <p><strong>Where:</strong></p>
 <ul>
-<li>$$(\varphi_1, \lambda_1)$$ and $$(\varphi_2, \lambda_2)$$ are the latitudes and longitudes of the two points.</li>
-<li>$$r$$ is the Earth’s radius.</li>
+<li>$\varphi_1, \lambda_1$ and $\varphi_2, \lambda_2$ are the latitudes and longitudes of the two points (in radians).</li>
+<li>$\Delta \varphi = \varphi_2 - \varphi_1$</li>
+<li>$\Delta \lambda = \lambda_2 - \lambda_1$</li>
+<li>$r$ is the Earth’s radius (≈ 6,371 km).</li>
 </ul>
-<p>Since the Earth is approximately spherical, the Haversine formula provides an accurate approximation, with less than <strong>1% error</strong> in most cases.</p>
+<p>Since the Earth is approximately spherical, the Haversine formula provides an accurate approximation of distances, typically within <strong>1% error</strong>.</p>
 <p>In our framework, instead of relying solely on standard loss functions such as <strong>MSE</strong>, <strong>RMSE</strong>, or <strong>MAPE</strong>, we propose using the Haversine distance as the <strong>primary loss function</strong>.<br>
 Because the model outputs latitude and longitude coordinates for the next hurricane location, the Haversine formula directly measures the distance between predicted and ground-truth points.</p>
 <p>A distance close to zero indicates a highly accurate prediction, while a large distance signals a significant error.<br>
 This distance-based loss can also be combined with common training mechanisms such as <strong>learning rate schedulers</strong> and <strong>early stopping</strong> to fully exploit its potential.</p>
 <hr>
 <h3 id="b2-bearing">b.2 Bearing</h3>
-<p>The <strong>bearing formula</strong> gives the direction from one geographic point to another along the great circle path:</p>
-<p>$$
-\theta = \text{atan2}!\left(
-\sin(\Delta \lambda)\cos(\varphi_2),,
-\cos(\varphi_1)\sin(\varphi_2)</p>
-<ul>
-<li>\sin(\varphi_1)\cos(\varphi_2)\cos(\Delta \lambda)
-\right)
-$$</li>
-</ul>
+<p>The <strong>Bearing formula</strong> gives the direction from one geographic point to another along the great-circle path:</p>
+<p>$$\theta = \text{atan2}!\left(\sin(\Delta \lambda)\cos(\varphi_2),, \cos(\varphi_1)\sin(\varphi_2) - \sin(\varphi_1)\cos(\varphi_2)\cos(\Delta \lambda)\right)$$</p>
 <p><strong>Where:</strong></p>
 <ul>
-<li>$$(\varphi_1, \lambda_1)$$ is the start point,</li>
-<li>$$(\varphi_2, \lambda_2)$$ is the end point,</li>
-<li>$$\Delta \lambda$$ is the difference in longitude.</li>
+<li>$(\varphi_1, \lambda_1)$ is the start point.</li>
+<li>$(\varphi_2, \lambda_2)$ is the end point.</li>
+<li>$\Delta \lambda$ is the difference in longitude.</li>
 </ul>
+<p>The result $\theta$ represents the <strong>initial bearing (azimuth)</strong> measured clockwise from <strong>true north</strong>.</p>
 <p>In our implementation, we use both the <strong>Haversine distance</strong> and <strong>bearing</strong> to compute two additional features — “distance” and “bearing” — which are appended to the dataset.<br>
 These features provide the model with richer information about hurricane trajectories while maintaining the core objective of predicting the next geographic location.</p>
 <h3 id="benefits-and-return-on-investment">Benefits and Return on Investment</h3>
@@ -1155,230 +1149,207 @@ These features provide the model with richer information about hurricane traject
 <h3 id="aws-services-used">AWS Services Used</h3>
 <h4 id="1-frontend--cdn">1. Frontend &amp; CDN</h4>
 <ul>
-<li><strong>Amazon S3</strong>: Storage static files React + Vite build (2 buckets: frontend + weather data).</li>
-<li><strong>Amazon CloudFront</strong> : CDN global distribution for React app, caching static assets.</li>
-<li><strong>Route 53</strong> : DNS management and SSL certificate routing.</li>
-<li><strong>AWS Certificate Manager (ACM)</strong> : SSL/TLS certificates (free).</li>
+<li><strong>Amazon S3</strong>: Stores static files built with React + Vite (2 buckets: frontend + weather data).</li>
+<li><strong>Amazon CloudFront</strong>: Global CDN distribution for the React app, caching static assets.</li>
+<li><strong>Route 53</strong>: DNS management and SSL certificate routing.</li>
+<li><strong>AWS Certificate Manager (ACM)</strong>: Provides free SSL/TLS certificates.</li>
 </ul>
 <h4 id="2-backend-services">2. Backend Services</h4>
 <ul>
-<li><strong>Amazon ECS Fargate</strong>: run .NET Core API containers (3 tasks by auto-scaling).</li>
-<li><strong>Application Load Balancer (ALB)</strong> : Distribute traffic to ECS tasks.</li>
-<li><strong>Amazon ElastiCache (Redis)</strong> : Cache layer for API responses và session data.</li>
-<li><strong>Amazon RDS PostgreSQL</strong> : main database storage typhoon data, predictions history.</li>
+<li><strong>Amazon EC2</strong>: Runs the .NET Core API inside a Docker container.</li>
+<li><strong>Amazon RDS (PostgreSQL)</strong>: Primary database storing typhoon data and prediction history.</li>
 </ul>
 <h4 id="3-ml--data-processing">3. ML &amp; Data Processing</h4>
 <ul>
 <li><strong>AWS Lambda</strong>:
 <ul>
-<li>Lambda Container for ML inference (Python + TensorFlow, load model .h5)</li>
-<li>Lambda Function for data collection (scheduled jobs)</li>
+<li>Lambda Container for ML inference (Python + TensorFlow, loads the <code>.h5</code> model).</li>
+<li>Lambda Function for data collection (scheduled jobs).</li>
 </ul>
 </li>
-<li><strong>Amazon EFS (Elastic File System)</strong> : storage model.h5 file (shared storage cho Lambda).</li>
-<li><strong>Route 53</strong> : Data lake for raw weather data and ML model backups.</li>
-<li><strong>Amazon EventBridge</strong> : Scheduler for automated data collection (hourly/daily cron jobs).</li>
+<li><strong>Amazon EFS (Elastic File System)</strong>: Stores the <code>.h5</code> model file (shared storage for Lambda).</li>
+<li><strong>Amazon S3</strong>: Serves as a data lake for raw weather data and ML model backups.</li>
+<li><strong>Amazon EventBridge</strong>: Scheduler for automated data collection (hourly/daily cron jobs).</li>
 </ul>
 <h4 id="4-security--monitoring">4. Security &amp; Monitoring</h4>
 <ul>
-<li><strong>AWS WAF</strong>: Web Application Firewall protect API from attacks.</li>
-<li><strong>Amazon CloudWatch</strong> : Logs, metrics, monitoring for every services.</li>
-<li><strong>AWS Secrets Manager</strong> : Management API keys, database credentials, third-party tokens.</li>
-<li><strong>VPC + Security Groups</strong> : Network isolation and access control.</li>
+<li><strong>Amazon CloudWatch</strong>: Logs, metrics, and monitoring for all services.</li>
+<li><strong>AWS Secrets Manager</strong>: Manages API keys, database credentials, and third-party tokens.</li>
+<li><strong>VPC + Security Groups</strong>: Network isolation and access control.</li>
+</ul>
+<h4 id="5-cicd">5. CI/CD</h4>
+<ul>
+<li><strong>GitHub Actions</strong>: Automated CI/CD pipeline for deployment (non-AWS service).</li>
+<li><strong>Amazon ECR (Elastic Container Registry)</strong>: Stores Docker images for EC2 and Lambda.</li>
 </ul>
 <h3 id="component-design">Component Design</h3>
-<h4 id="data-flow-architecture">Data Flow Architecture</h4>
-<h5 id="1-user-interface-layer">1. User Interface Layer</h5>
+<h4 id="system-architecture">System Architecture</h4>
+<h4 id="1-user-interface-layer">1. User Interface Layer</h4>
 <ul>
-<li><strong>Frontend</strong>:React + Vite app hosted on S3, distribute by CloudFront CDN.</li>
-<li><strong>Authentication</strong>: (Optional) Amazon Cognito for user management if need login.</li>
-<li><strong>Data Storage</strong>: Raw data is stored in an S3 data lake; processed data is stored in another S3 bucket.</li>
-<li><strong>Data Processing</strong>: AWS Glue Crawlers catalog the data, and ETL jobs transform it for analysis.</li>
-<li><strong>Real-time Updates</strong>: WebSocket or polling API to display predictions real-time.</li>
+<li><strong>Frontend</strong>: React + Vite application hosted on Amazon S3 and distributed via CloudFront CDN.</li>
+<li><strong>Authentication</strong>: <em>(Optional)</em> Amazon Cognito for user management if login is required.</li>
+<li><strong>Real-time Updates</strong>: WebSocket or API polling to display real-time predictions.</li>
 </ul>
-<h5 id="2-api-layer">2. API Layer</h5>
+<h4 id="2-api-layer">2. API Layer</h4>
 <ul>
-<li><strong>Load Balancer</strong>:ALB receive HTTPS requests from CloudFront/Users.</li>
-<li><strong>Backend API</strong>: 3x ECS Fargate tasks run .NET Core Web API.
+<li><strong>Backend API</strong>: A single EC2 instance running .NET Core Web API.
 <ul>
-<li><strong>Route 1</strong>: /api/typhoons - CRUD operations</li>
-<li><strong>Route 2</strong>: /api/predict - ML prediction endpoint</li>
-<li><strong>Route 3</strong>: /api/weather - Weather data API.</li>
+<li><strong>Route 1</strong>: <code>/api/typhoons</code> – CRUD operations.</li>
+<li><strong>Route 2</strong>: <code>/api/predict</code> – Machine Learning prediction endpoint.</li>
+<li><strong>Route 3</strong>: <code>/api/weather</code> – Weather data API.</li>
+</ul>
+</li>
+<li><strong>Caching</strong>: Uses in-memory caching within the .NET API to improve performance.</li>
+</ul>
+<h4 id="3-data-storage-layer">3. Data Storage Layer</h4>
+<ul>
+<li><strong>Database</strong>: Amazon RDS (PostgreSQL) stores:
+<ul>
+<li>Typhoon historical data (location, time, intensity).</li>
+<li>Prediction results.</li>
+<li>User data (if authentication is enabled).</li>
+</ul>
+</li>
+<li><strong>Data Lake</strong>: Amazon S3 buckets store:
+<ul>
+<li>Raw weather data (JSON/CSV from external APIs).</li>
+<li>Machine Learning model files (<code>.h5</code>, <code>.pkl</code>).</li>
+<li>Logs and backups.</li>
 </ul>
 </li>
 </ul>
-<h5 id="3-data-storage-layer">3. Data Storage Layer</h5>
+<h4 id="4-ml-prediction-service">4. ML Prediction Service</h4>
 <ul>
-<li>
-<p><strong>Database</strong>:RDS PostgreSQL storage:</p>
+<li><strong>Lambda Container</strong>:
 <ul>
-<li>Typhoon historical data (trajectory, time, intensity)</li>
-<li>Prediction results</li>
-<li>User data</li>
+<li><strong>Input</strong>: Typhoon feature data.</li>
+<li><strong>Process</strong>: Load <code>model.h5</code> from EFS → predict direction.</li>
+<li><strong>Output</strong>: Direction, confidence score, and prediction probabilities.</li>
 </ul>
 </li>
-<li>
-<p><strong>Data Lake</strong>: S3 buckets lưu:</p>
-<ul>
-<li>Raw weather data (JSON/CSV from external APIs)</li>
-<li>ML model files (.h5, .pkl)</li>
-</ul>
-</li>
-</ul>
-<h5 id="4-ml-prediction-service">4. ML Prediction Service</h5>
-<ul>
-<li>
-<p><strong>Lambda Container</strong>:(Python + TensorFlow):</p>
-<ul>
-<li>Input: Typhoon features (lat, lon, pressure, wind_speed, etc.)</li>
-<li>Process: Load model.h5 from EFS → Predict direction</li>
-<li>Output: Direction, confidence score, probabilities</li>
-</ul>
-</li>
-<li>
-<p><strong>Workflow</strong>:</p>
+<li><strong>EFS Mount</strong>: Lambda mounts EFS to access the <code>model.h5</code> file (to avoid cold start downloads).</li>
+<li><strong>Workflow</strong>:
 <ul>
 <li>
 <ol>
-<li>.NET API receive request predict from user</li>
+<li>.NET API receives a prediction request from the user.</li>
 </ol>
 </li>
 <li>
 <ol start="2">
-<li>API call Lambda function URL</li>
+<li>API calls the Lambda Function URL.</li>
 </ol>
 </li>
 <li>
 <ol start="3">
-<li>Lambda load model from EFS</li>
+<li>Lambda loads the model from EFS.</li>
 </ol>
 </li>
 <li>
 <ol start="4">
-<li>Lambda fetch weather data từ S3</li>
+<li>Lambda fetches weather data from S3.</li>
 </ol>
 </li>
 <li>
 <ol start="5">
-<li>Lambda run inference</li>
+<li>Lambda performs inference.</li>
 </ol>
 </li>
 <li>
 <ol start="6">
-<li>Return prediction to .NET API</li>
+<li>Returns prediction results to the .NET API.</li>
 </ol>
 </li>
 <li>
 <ol start="7">
-<li>API cache result into Redis</li>
+<li>API responds to the user.</li>
 </ol>
 </li>
 </ul>
 </li>
 </ul>
-<h5 id="5-data-collection-pipeline">5. Data Collection Pipeline</h5>
+<h4 id="5-data-collection-pipeline">5. Data Collection Pipeline</h4>
 <ul>
-<li>
-<p><strong>EventBridge Scheduler</strong>:Trigger Lambda each 1 hour</p>
-</li>
-<li>
-<p><strong>Lambda Data Collector:</strong></p>
+<li><strong>EventBridge Scheduler</strong>: Triggers Lambda every 1 hour.</li>
+<li><strong>Lambda Data Collector</strong>:
 <ul>
-<li>Call external weather APIs (NOAA, JMA, etc.)</li>
-<li>Parse and validate data</li>
-<li>Store raw data to S3</li>
-<li>Update processed data into RDS</li>
+<li>Calls external weather APIs.</li>
+<li>Parses and validates data.</li>
+<li>Stores raw data into S3.</li>
+<li>Updates processed data into RDS.</li>
 </ul>
 </li>
-<li>
-<p><strong>AI Team Integration:</strong></p>
+<li><strong>AI Team Integration</strong>:
 <ul>
-<li>AI team upload model.h5 new into EFS</li>
-<li>Lambda auto reload model at next invocation</li>
+<li>The AI team uploads a new <code>model.h5</code> to EFS.</li>
+<li>Lambda automatically reloads the model on the next invocation.</li>
 </ul>
 </li>
 </ul>
-<h5 id="6-monitoring--security">6. Monitoring &amp; Security</h5>
+<h4 id="6-monitoring--security">6. Monitoring &amp; Security</h4>
 <ul>
-<li>
-<p><strong>CloudWatch:</strong></p>
+<li><strong>CloudWatch</strong>:
 <ul>
-<li>Logs from ECS, Lambda, ALB</li>
-<li>Metrics: CPU, Memory, Request count, Error rate</li>
-<li>Alarms: High error rate, High latency, Low availability</li>
+<li>Collects logs from EC2, Lambda, and RDS.</li>
+<li>Monitors key metrics: CPU, memory, request count, error rate.</li>
+<li>Sets alarms for high error rates, high latency, or low availability.</li>
 </ul>
 </li>
-<li>
-<p><strong>Secrets Manager: save:</strong></p>
+<li><strong>Secrets Manager</strong>: Stores:
 <ul>
-<li>RDS credentials</li>
-<li>Redis password</li>
-<li>External API keys (weather data sources)</li>
-</ul>
-</li>
-<li>
-<p><strong>WAF Rules:</strong>:</p>
-<ul>
-<li>Rate limiting (max 100 requests/minute/IP)</li>
-<li>SQL injection protection</li>
-<li>XSS protection</li>
+<li>RDS credentials.</li>
+<li>External API keys for weather data sources.</li>
 </ul>
 </li>
 </ul>
 <h3 id="budget-estimation">Budget Estimation</h3>
 <h4 id="infrastructure-costs---monthly-ap-southeast-1-singapore">Infrastructure Costs - Monthly (ap-southeast-1 Singapore)</h4>
-<h3 id="infrastructure-costs">Infrastructure Costs</h3>
 <h4 id="frontend--cdn">Frontend &amp; CDN</h4>
 <ul>
 <li><strong>S3 Standard</strong>: $0.50/Month (5GB storage, 10GB transfer)</li>
 <li><strong>CloudFront</strong>: $4.25/Month (50GB data transfer, 1M requests)</li>
 <li><strong>Route 53</strong>: $0.50/Month (1 hosted zone, 1M queries)</li>
-<li><strong>ACM (SSL)</strong>:$0.00/Month (Free)</li>
+<li><strong>ACM (SSL)</strong>: $0.00/Month (Free)</li>
 </ul>
-<p>Total: $5. 25/month</p>
+<p><strong>Total: $5.25/Month</strong></p>
 <h4 id="backend-services">Backend Services</h4>
 <ul>
-<li><strong>ECS Fargate</strong>: $45.00/Month (3 tasks × 0.5  vCPU, 1GB RAM (always-on))</li>
-<li><strong>ALB</strong>: $4.25/Month (50GB data transfer, 1M requests)</li>
-<li><strong>Route 53</strong>: $16.00/Month (Basic load balancer, 1M LCUs)</li>
-<li><strong>ElastiCache Redis</strong>: $12.00/Month (cache.t3.micro (0.5GB))</li>
-<li><strong>RDS PostgreSQL</strong>:$20.00/Month (db.t3.micro, 20GB SSD)</li>
+<li><strong>EC2</strong>: ~$15.00/Month (t4g.small instance, ARM, on-demand)</li>
+<li><strong>RDS PostgreSQL</strong>: $20.00/Month (db.t3.micro, 20GB SSD)</li>
 </ul>
-<p>Total $93.00/Month</p>
+<p><strong>Total: $35.00/Month</strong></p>
 <h4 id="ml--data-processing">ML &amp; Data Processing</h4>
 <ul>
-<li><strong>Lambda Container</strong>: $5.00/Month (1,000 invocations/day × 2GB RAM × 3s duration)</li>
+<li><strong>Lambda Container</strong>: $5.00/Month (1,000 invocations/day × 2GB RAM × 3s)</li>
 <li><strong>Lambda Data Collector</strong>: $0.50/Month (24 invocations/day × 512MB × 30s)</li>
 <li><strong>EFS</strong>: $0.33/Month (1GB storage (model.h5))</li>
 <li><strong>S3 Data Lake</strong>: $1.50/Month (50GB weather data, 10GB transfer)</li>
-<li><strong>EventBridge</strong>:$0.00/Month (730 scheduled events/month)</li>
+<li><strong>EventBridge</strong>: $0.00/Month (730 scheduled events/month)</li>
 </ul>
-<p>Total $7.33/Month</p>
+<p><strong>Total: $7.33/Month</strong></p>
 <h4 id="security--monitoring">Security &amp; Monitoring</h4>
 <ul>
 <li><strong>CloudWatch Logs</strong>: $2.50/Month (5GB ingestion, 1GB storage)</li>
 <li><strong>CloudWatch Metrics</strong>: $0.60/Month (20 custom metrics)</li>
 <li><strong>Secrets Manager</strong>: $2.00/Month (5 secrets)</li>
-<li><strong>AWS WAF</strong>: $12.00/Month (cache.t3.micro (0.5GB))</li>
 </ul>
-<p>Total $15.10/Month</p>
+<p><strong>Total: $5.10/Month</strong></p>
 <h4 id="networking">Networking</h4>
 <ul>
-<li><strong>VPC</strong>: $0.00/Month (Free (no VPN, no PrivateLink))</li>
-<li><strong>NAT Gateway</strong>: $32.85/Month (1 NAT × 0.045 usd/hour × 730h)</li>
+<li><strong>VPC</strong>: $0.00/Month (Free - no VPN, no PrivateLink)</li>
 <li><strong>Data Transfer (Outbound)</strong>: $1.80/Month (20GB to Internet)</li>
 <li><strong>ECR</strong>: $0.10/Month (1GB storage)</li>
 </ul>
-<p>Total $34.75/Month</p>
+<p><strong>Total: $1.90/Month</strong></p>
 <h4 id="total"><strong>TOTAL</strong></h4>
 <ul>
 <li><strong>Frontend &amp; CDN</strong>: $5.25/Month</li>
-<li><strong>Backend Services</strong>: $93.00/Month</li>
+<li><strong>Backend Services</strong>: $35.00/Month</li>
 <li><strong>ML &amp; Data Processing</strong>: $7.33/Month</li>
-<li><strong>Security &amp; Monitoring</strong>: $34.75/Month</li>
-<li><strong>Networking</strong>: $15.10/Month</li>
+<li><strong>Security &amp; Monitoring</strong>: $5.10/Month</li>
+<li><strong>Networking</strong>: $1.90/Month</li>
 </ul>
-<p><strong>Total</strong> $155.43/month</p>
+<p><strong>Total Monthly Cost: $54.58/Month</strong></p>
 <h3 id="7-risk-assessment">7. Risk Assessment</h3>
 <h4 id="risk-matrix">Risk Matrix</h4>
 <ul>
@@ -2123,19 +2094,19 @@ These features provide the model with richer information about hurricane traject
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1760235269"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1760235269"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1760235269"></script>
-    <script src="../../js/jquery.sticky.js?1760235269"></script>
-    <script src="../../js/featherlight.min.js?1760235269"></script>
-    <script src="../../js/highlight.pack.js?1760235269"></script>
+    <script src="../../js/clipboard.min.js?1760245355"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1760245355"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1760245355"></script>
+    <script src="../../js/jquery.sticky.js?1760245355"></script>
+    <script src="../../js/featherlight.min.js?1760245355"></script>
+    <script src="../../js/highlight.pack.js?1760245355"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1760235269"></script>
-    <script src="../../js/learn.js?1760235269"></script>
-    <script src="../../js/hugo-learn.js?1760235269"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1760245355"></script>
+    <script src="../../js/learn.js?1760245355"></script>
+    <script src="../../js/hugo-learn.js?1760245355"></script>
 
-    <link href="../../mermaid/mermaid.css?1760235269" rel="stylesheet" />
-    <script src="../../mermaid/mermaid.js?1760235269"></script>
+    <link href="../../mermaid/mermaid.css?1760245355" rel="stylesheet" />
+    <script src="../../mermaid/mermaid.js?1760245355"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
